@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/materialize.min.css') }}"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Loggy</title>
+    </head>
+    <body>
+
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/reload" class="brand-logo" style="padding-left: 10px; padding-right: 10px;">Loggy</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    {% for config in log_json['app_configs'] %}
+                        <li data-name="{{config['name']}}" data-location="{{config['location']}}" onclick="setLog(this)"><a>{{config['name']}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            {% for config in log_json['app_configs'] %}
+                <li data-name="{{config['name']}}" data-location="{{config['location']}}" onclick="setLog(this)"><a>{{config['name']}}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h5 id="log-name" style="padding-left: 10px; padding-right: 10px;">Welcome!</h5>
+        <div id="log-content" style="padding-left: 10px; padding-right: 10px;">
+            <p>Select a log file at the top right.</p>
+        </div>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="{{ url_for('static',filename='js/materialize.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static',filename='js/loggy.js') }}"></script>
+    </body>
+
+    <footer>
+        
+    </footer>
+</html>
+

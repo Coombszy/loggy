@@ -1,0 +1,17 @@
+tbody {
+    display:block;
+    height: 75vh;
+    overflow:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+    padding: 0px 5px;
+}
+thead {
+    width: calc( 100% - 1em )
+}
+table {
+    width:100%;
+}

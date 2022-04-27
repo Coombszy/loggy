@@ -1,0 +1,8 @@
+{
+    "app_configs": [
+        {
+            "name": "Sample log",
+            "location": "app/data.log"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+
+  loggy:
+    image: loggy
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    network_mode: host
