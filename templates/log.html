@@ -1,16 +1,14 @@
-<html>
-    <!--Import log.css-->
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/log.css') }}"  media="screen,projection"/>
+<!--Import log.css-->
+<link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/log.css') }}"  media="screen,projection"/>
 
-    <table>
-        <tbody id="tablebody">
-            {% for line in logs %}
-            <tr>
-                <td style="padding: 0px 5px;">
-                    {{line}}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</html>
+<table>
+    <tbody id="table-body">
+        {% for line in logs %}
+        <tr>
+            <td style="padding: 0px 5px;">
+                {{line}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
