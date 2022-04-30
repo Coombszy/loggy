@@ -32,4 +32,4 @@ function updateLog() {
     getLog(currentName, currentLocation);
 }
 
-setInterval(updateLog, 30*1000)
+setInterval(updateLog, 15*1000)
