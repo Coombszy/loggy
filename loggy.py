@@ -35,7 +35,10 @@ def get_log(app: str, file):
     if not path.isfile(file_path) or is_dodgy:
         abort(404)
     with open(file_path, 'r') as f:
-        return render_template('log.html', logs=f.readlines())
+        lines = []
+        for line in f.readlines():
+            lines.append(line.strip())
+        return render_template('log.html', logs=lines)
 
 @app.route('/reload')
 def reload():
